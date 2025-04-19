@@ -1,1 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="refresh" content="1800">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QRZ Image Rotator</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: black;
+    }
+    img {
+      max-width: 100%;
+      max-height: 100%;
+    }
+  </style>
+</head>
+<body>
+  <img id="rotatingImage" src="images/logo1.jpg" alt="Rotating QRZ Image">
 
+  <script>
+    const images = [
+      "images/logo3.jpg",
+      "images/logo2.jpg",
+      "images/logo1.jpg"
+    ];
+
+    let index = 0;
+    setInterval(() => {
+      index = (index + 1) % images.length;
+      document.getElementById('rotatingImage').src = images[index];
+    }, 3000); // 3 seconds
+  </script>
+</body>
+</html>
